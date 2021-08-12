@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "red_planet_weather",
+    "slug": "red_planet_weather",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "red_planet_weather"
+}
