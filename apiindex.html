@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API testing</title>
+  </head>
+  <body>
+    <h1>testing API stuff :)</h1>
+    <script>
+      const API_KEY = "c2r0C21lzWwgnuSDxr1TeWnDgrPyVilfALUPtWbg";
+      const SOLAR_FLARES_API = `https://api.nasa.gov/DONKI/FLR?startDate=yyyy-MM-dd&endDate=yyyy-MM-dd&api_key=${API_KEY}`;
+
+      //This is for solar flares! 
+      //For them I think we want:
+      // beginTime
+      //peakTime
+      //endTime (could be null)
+      //classType
+      //sourceLocation
+
+      function solarFlares() {
+    return fetch(SOLAR_FLARES_API)
+      .then(res => res.json())
+      .then(data => {
+        const peakTimes = data.map(info => info.peakTime).join("\n");
+        console.log(peakTimes)
+      });
+  }
+
+      solarFlares()
+
+
+    </script>
+  </body>
+</html>

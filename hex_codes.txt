@@ -1,0 +1,15 @@
+lightest pink: #fff1f1
+lighter pink: #ffe3e3
+
+text/main pink: ffbaba
+text outline: f78282
+
+dark brown: 3a1919
+red: c75151
+medium redbrown: 97403e
+dark redbrown: 70312f
+
+
+
+dark main pink(red): #ff6e6e
+
