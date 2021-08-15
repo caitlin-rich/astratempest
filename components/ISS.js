@@ -1,14 +1,5 @@
-//Where is the ISS "widget" for homepage! 
-//ISS API URL: http://api.open-notify.org/iss-now.json
-//This returns a JSON key and then we'll use a reverse geocoding API to get the location of where the ISS is over. 
-
-//MapQuest Reverser Geocoding
-//API KEY: RSGQuH2GBJFma7QGvjTVgsuVsvTCJCY6
-//EXAMPLE GET REQUEST: http://www.mapquestapi.com/geocoding/v1/reverse?key=KEY&location=30.333472,-81.470448&includeRoadMetadata=true&includeNearestIntersection=true
-
-
-
 ///////////////////IMPORTS////////////////
+
 import React from "react";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, Image, ScrollView } from "react-native";
@@ -21,15 +12,13 @@ const styles = StyleSheet.create({
     container: {
       flex: 1,
       backgroundColor: "#ffe3e3",
-      //alignItems: "center",
-      //justifyContent: "flex-start",
       width: "100%",
       height: "10%",
       margin: 10,
     },
   });
   
-  class SolarFlares extends React.Component {
+  class ISS extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -65,5 +54,4 @@ const styles = StyleSheet.create({
     }
   }
   
-  export default SolarFlares;
-  
+  export default ISS;
