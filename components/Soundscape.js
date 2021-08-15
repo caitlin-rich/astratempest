@@ -12,13 +12,11 @@ import Slider from '@react-native-community/slider';
 import { Ionicons, MaterialIcons, Entypo } from '@expo/vector-icons';
 
 
-//This is not my code, it's taken from a tutorial on Expo AV and is the only thing I could make work as I wanted! 
+//This is not entirely my code, it's taken from a tutorial on Expo AV and is the only thing I could make work as I wanted! 
 //Because I am using it to learn, I'm going through and making sure I understand every line and what it's doing as part of the whole. 
-//I'm also modifying as needed. 
+//I'm also modifying fairly heavily to make it work for my soundscape!
 
 //I am also planning on going back and trying to find a better solution than duplicating all this code for each sound - I'm sure I can make this more DRY! Maybe making it a class and just calling new instance of the class for each one? But, I'm pressed for time, so although this isn't a perfect solution, it'll do for now. 
-
-//Known Bugs: Stops on PAUSE once track ends. Haven't yet figure out how to fix that! 
 
 
 const Files = [
@@ -87,7 +85,7 @@ export function KeplerStar() {
         //result stores the sound once the song is loaded
         const result = await sound.current.loadAsync(
           Files[index].file,
-          {},
+          {isLooping: true},
           true
         );
         if (result.isLoaded === false) {
@@ -216,7 +214,7 @@ export function SaturnRadioWaves() {
         //result stores the sound once the song is loaded
         const result = await sound.current.loadAsync(
           Files[index].file,
-          {},
+          {isLooping: true},
           true
         );
         if (result.isLoaded === false) {
@@ -345,7 +343,7 @@ export function LightningOnJupiter() {
         //result stores the sound once the song is loaded
         const result = await sound.current.loadAsync(
           Files[index].file,
-          {},
+          {isLooping: true},
           true
         );
         if (result.isLoaded === false) {
@@ -474,7 +472,7 @@ export function EmfisisChorus() {
         //result stores the sound once the song is loaded
         const result = await sound.current.loadAsync(
           Files[index].file,
-          {},
+          {isLooping: true},
           true
         );
         if (result.isLoaded === false) {
@@ -603,7 +601,7 @@ export function EnceladusHiss() {
         //result stores the sound once the song is loaded
         const result = await sound.current.loadAsync(
           Files[index].file,
-          {},
+          {isLooping: true},
           true
         );
         if (result.isLoaded === false) {
@@ -732,7 +730,7 @@ export function InterstellarRadioWaves() {
         //result stores the sound once the song is loaded
         const result = await sound.current.loadAsync(
           Files[index].file,
-          {},
+          {isLooping: true},
           true
         );
         if (result.isLoaded === false) {
@@ -861,7 +859,7 @@ export function WhistlerWaves() {
         //result stores the sound once the song is loaded
         const result = await sound.current.loadAsync(
           Files[index].file,
-          {},
+          {isLooping: true},
           true
         );
         if (result.isLoaded === false) {
@@ -990,7 +988,7 @@ export function Stardust() {
         //result stores the sound once the song is loaded
         const result = await sound.current.loadAsync(
           Files[index].file,
-          {},
+          {isLooping: true},
           true
         );
         if (result.isLoaded === false) {

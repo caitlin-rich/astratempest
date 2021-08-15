@@ -7,6 +7,9 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createDrawerNavigator, DrawerComponent } from '@react-navigation/drawer';
 
+import ISS from "./ISS.js"
+import SoundDisplay from "./SoundDisplay";
+
 //////////////////////////////////////////
 
 const styles = StyleSheet.create({
@@ -18,6 +21,7 @@ const styles = StyleSheet.create({
 });
 
 const Drawer = createDrawerNavigator();
+
 
 
 //Known Bug: clicking on the drawer navigation persists the navigation drawer, but clicking these links does not. 
@@ -32,18 +36,11 @@ export default function HomePage({ navigation }) {
         source={require("../images/rpw_app_header_resized.png")}
       />
 
+      <ISS />
+
+      
+
       {/* Touchable Ripples are used here as custom buttons. Currently, they don't actually ripple. :( */}
-
-      <TouchableRipple
-        onPress={() => navigation.navigate("SolarFlares")}
-        rippleColor="rgba(0, 0, 0, .32)"
-      >
-        <Image
-          style={{width: "100%", margin: 2}}
-          source={require("../images/rpw_solar_flares_resized.png")}
-        />
-      </TouchableRipple>
-
       <TouchableRipple
         onPress={() => navigation.navigate("GeoStorms")}
         rippleColor="rgba(0, 0, 0, .32)"
@@ -51,6 +48,16 @@ export default function HomePage({ navigation }) {
         <Image
           style={{width: "100%", margin: 2}}
           source={require("../images/rpw_geomagnetic_storms_resized.png")}
+        />
+      </TouchableRipple>
+
+      <TouchableRipple
+        onPress={() => navigation.navigate("SEP")}
+        rippleColor="rgba(0, 0, 0, .32)"
+      >
+        <Image
+          style={{width: "100%", margin: 2}}
+          source={require("../images/rpw_solar_energetic_particles_resized.png")}
         />
       </TouchableRipple>
 
@@ -63,6 +70,18 @@ export default function HomePage({ navigation }) {
           source={require("../images/rpw_coronal_mass_ejections_resized.png")}
         />
       </TouchableRipple>
+      
+      <TouchableRipple
+        onPress={() => navigation.navigate("SolarFlares")}
+        rippleColor="rgba(0, 0, 0, .32)"
+      >
+        <Image
+          style={{width: "100%", margin: 2}}
+          source={require("../images/rpw_solar_flares_resized.png")}
+        />
+      </TouchableRipple>
+
+
 
       <TouchableRipple
         onPress={() => navigation.navigate("InterplanetaryShock")}
@@ -71,16 +90,6 @@ export default function HomePage({ navigation }) {
         <Image
           style={{width: "100%", margin: 2}}
           source={require("../images/rpw_interplanetary_shock_resized.png")}
-        />
-      </TouchableRipple>
-
-      <TouchableRipple
-        onPress={() => navigation.navigate("SEP")}
-        rippleColor="rgba(0, 0, 0, .32)"
-      >
-        <Image
-          style={{width: "100%", margin: 2}}
-          source={require("../images/rpw_solar_energetic_particles_resized.png")}
         />
       </TouchableRipple>
 

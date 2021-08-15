@@ -10,7 +10,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#ffe3e3",
+    backgroundColor: "#ffd2b5",
     //alignItems: "center",
     //justifyContent: "flex-start",
     width: "100%",
@@ -43,6 +43,12 @@ class SolarEnergeticParticles extends React.Component {
   render() {
     return (
       <ScrollView style={styles.container}>
+        <Image
+        style={{width: "100%", margin: 2}}
+        source={require("../images/rwp_SEP_header.png")}
+      />
+        <Text>Solar energetic particles are energetic charged particles (such as electrons and protons) traveling much faster than ambient particles in the space plasma, at a franction of the speed of light (relativistic!). They can travel from the Sun to the Earth in one hour or less!</Text>
+        <Text>RECENT EVENTS: </Text>
         {this.state.isLoading ? (
           <Text>Loading...</Text>
         ) : (

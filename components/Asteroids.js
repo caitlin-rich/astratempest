@@ -10,7 +10,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#ffe3e3",
+    backgroundColor: "#e2f5f7",
     // alignItems: "center",
     //justifyContent: "flex-start",
     width: "100%",
@@ -44,6 +44,11 @@ class GeomagneticStorms extends React.Component {
   render() {
     return (
       <ScrollView style={styles.container}>
+        <Image
+        style={{width: "100%", margin: 2}}
+        source={require("../images/rwp_asteroids_header.png")}
+      />
+      <Text>Asteroids, sometimes called minor planets, are rocky, airless remnants left over from the early formation of our solar system about 4.6 billion years ago. The current known asteroid count is: 1,113,527. Most of this ancient space rubble can be found orbiting the Sun between Mars and Jupiter within the main asteroid belt. Asteroids range in size from Vesta – the largest at about 329 miles (530 kilometers) in diameter – to bodies that are less than 33 feet (10 meters) across. The total mass of all the asteroids combined is less than that of Earth's Moon.</Text>
         {this.state.isLoading ? (
           <Text>Loading...</Text>
         ) : (

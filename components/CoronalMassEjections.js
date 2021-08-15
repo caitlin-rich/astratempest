@@ -10,7 +10,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#ffe3e3",
+    backgroundColor: "#fbdc81",
     //alignItems: "center",
     //justifyContent: "flex-start",
     width: "98%",
@@ -43,6 +43,12 @@ class CoronalMassEjections extends React.Component {
   render() {
     return (
       <ScrollView style={styles.container}>
+        <Image
+        style={{width: "100%", margin: 2}}
+        source={require("../images/rwp_CME_header.png")}
+      />
+        <Text>Coronal Mass Ejections (CMEs) are large expulsions of plasma and magnetic field from the Sun’s corona. They can eject billions of tons of coronal material and carry an embedded magnetic field (frozen in flux) that is stronger than the background solar wind interplanetary magnetic field (IMF) strength. CMEs travel outward from the Sun at speeds ranging from slower than 250 kilometers per second (km/s) to as fast as near 3000 km/s. The fastest Earth-directed CMEs can reach our planet in as little as 15-18 hours. Slower CMEs can take several days to arrive. They expand in size as they propagate away from the Sun and larger CMEs can reach a size comprising nearly a quarter of the space between Earth and the Sun by the time it reaches our planet.</Text>
+        <Text>RECENT EVENTS: </Text>
         {this.state.isLoading ? (
           <Text>Loading...</Text>
         ) : (

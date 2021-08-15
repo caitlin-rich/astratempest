@@ -36,11 +36,11 @@ export default function DrawerNav() {
     <Drawer.Navigator initialRouteName="Home">
       <Drawer.Screen name="Home" component={HomePage} />
       <Drawer.Screen name="Listen To Space" component={SoundDisplay} />
-      <Drawer.Screen name="Solar Flares" component={Asteroids} />
-      <Drawer.Screen name="Geomagnetic Storms" component={Asteroids} />
-      <Drawer.Screen name="Coronal Mass Ejections" component={Asteroids} />
-      <Drawer.Screen name="Interplanetary Shock" component={Asteroids} />
-      <Drawer.Screen name="Solar Energetic Particles" component={Asteroids} />
+      <Drawer.Screen name="Solar Flares" component={SolarFlares} />
+      <Drawer.Screen name="Geomagnetic Storms" component={GeoStorms} />
+      <Drawer.Screen name="Coronal Mass Ejections" component={CME} />
+      <Drawer.Screen name="Interplanetary Shock" component={InterplanetaryShock} />
+      <Drawer.Screen name="Solar Energetic Particles" component={SEP} />
       <Drawer.Screen name="Asteroids" component={Asteroids} />
     </Drawer.Navigator>
   );

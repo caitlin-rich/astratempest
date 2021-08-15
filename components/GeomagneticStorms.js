@@ -10,7 +10,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#ffe3e3",
+    backgroundColor: "#ebf5c9",
     //alignItems: "center",
     //justifyContent: "flex-start",
     width: "100%",
@@ -43,6 +43,12 @@ class GeomagneticStorms extends React.Component {
   render() {
     return (
       <ScrollView style={styles.container}>
+        <Image
+        style={{width: "100%", margin: 2}}
+        source={require("../images/rwp_geostorms_header.png")}
+      />
+        <Text>A geomagnetic storm is a major disturbance of Earth's magnetosphere that occurs when there is a very efficient exchange of energy from the solar wind into the space environment surrounding Earth. These storms result from variations in the solar wind that produces major changes in the currents, plasmas, and fields in Earth’s magnetosphere. The solar wind conditions that are effective for creating geomagnetic storms are sustained (for several to many hours) periods of high-speed solar wind, and most importantly, a southward directed solar wind magnetic field (opposite the direction of Earth’s field) at the dayside of the magnetosphere. This condition is effective for transferring energy from the solar wind into Earth’s magnetosphere.</Text>
+        <Text>RECENT EVENTS: </Text>
         {this.state.isLoading ? (
           <Text>Loading...</Text>
         ) : (

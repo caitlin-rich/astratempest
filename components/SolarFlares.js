@@ -10,7 +10,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#ffe3e3",
+    backgroundColor: "#eef9c0",
     //alignItems: "center",
     //justifyContent: "flex-start",
     width: "100%",
@@ -43,7 +43,12 @@ class SolarFlares extends React.Component {
   render() {
     return (
       <ScrollView style={styles.container}>
-        <Text>Info about Solar Flares will go here!</Text>
+        <Image
+        style={{width: "100%", margin: 2}}
+        source={require("../images/rpw_solar_flares_header.png")}
+      />
+        <Text>A solar flare is an intense burst of radiation coming from the release of magnetic energy associated with sunspots. Flares are our solar system’s largest explosive events. They are seen as bright areas on the sun and they can last from minutes to hours. We typically see a solar flare by the photons (or light) it releases, at most every wavelength of the spectrum. The primary ways we monitor flares are in x-rays and optical light. Flares are also sites where particles (electrons, protons, and heavier particles) are accelerated.</Text>
+        <Text>RECENT FLARES: </Text>
         {this.state.isLoading ? (
           <Text>Loading...</Text>
         ) : (
@@ -51,7 +56,6 @@ class SolarFlares extends React.Component {
             return (
               <Card style={{ margin: 5, width: "94%" }} key={idx}>
                 <Card.Content>
-                  <Text>FLARE INFO: </Text>
                   <Text>Class Type: {i.classType}</Text>
                   <Text>Active Region: {i.activeRegionNum}</Text>
                   <Text>Begin Time:{i.beginTime}</Text>

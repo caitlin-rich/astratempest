@@ -10,7 +10,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#ffe3e3",
+    backgroundColor: "#8ce8eb",
     //alignItems: "center",
     //justifyContent: "flex-start",
     width: "100%",
@@ -43,6 +43,12 @@ class InterplanetaryShock extends React.Component {
   render() {
     return (
       <ScrollView style={styles.container}>
+        <Image
+        style={{width: "100%", margin: 2}}
+        source={require("../images/rwp_ipshock_header.png")}
+      />
+      <Text>Interplanetary shocks occur when fast-moving solar wind overtakes slower-moving solar wind, spawning disruptions that ripple outward through our solar system. They can trigger geomagnetic storms when they touch Earth's magnetosphere. Such shocks are fairly common, but they're hard to measure.</Text>
+      <Text>RECENT EVENTS: </Text>
         {this.state.isLoading ? (
           <Text>Loading...</Text>
         ) : (
