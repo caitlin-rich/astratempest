@@ -11,6 +11,16 @@ import Constants from 'expo-constants';
 import Slider from '@react-native-community/slider';
 import { Ionicons, MaterialIcons, Entypo } from '@expo/vector-icons';
 
+
+//This is not my code, it's taken from a tutorial on Expo AV and is the only thing I could make work as I wanted! 
+//Because I am using it to learn, I'm going through and making sure I understand every line and what it's doing as part of the whole. 
+//I'm also modifying as needed. 
+
+//I am also planning on going back and trying to find a better solution than duplicating all this code for each sound - I'm sure I can make this more DRY! Maybe making it a class and just calling new instance of the class for each one? But, I'm pressed for time, so although this isn't a perfect solution, it'll do for now. 
+
+//Known Bugs: Stops on PAUSE once track ends. Haven't yet figure out how to fix that! 
+
+
 const Files = [
   {
     id: 1,
@@ -54,12 +64,6 @@ const Files = [
   },
 ];
 
-//This is not my code, it's taken from a tutorial on Expo AV and is the only thing I could make work as I wanted! 
-//Because I am using it to learn, I'm going through and making sure I understand every line and what it's doing as part of the whole. 
-//I'm also modifying as needed. 
-
-//I am also planning on going back and trying to find a better solution than duplicating all this code for each sound - I'm sure I can make this more DRY! Maybe making it a class and just calling new instance of the class for each one? But, I'm pressed for time, so although this isn't a perfect solution, it'll do for now. 
-
 
 //idx 0
 export function KeplerStar() {
@@ -68,8 +72,6 @@ export function KeplerStar() {
   const [Loading, SetLoading] = useState(false);
   const [Playing, SetPlaying] = useState(false);
   const [Duration, SetDuration] = useState(false);
-  const CurrentIndex = useRef(0);
-  const [Value, SetValue] = useState(0);
 
   //Unsure why useRef and not just the new Audio.Sound - let's research! 
   const sound = useRef(new Audio.Sound());
@@ -199,8 +201,6 @@ export function SaturnRadioWaves() {
   const [Loading, SetLoading] = useState(false);
   const [Playing, SetPlaying] = useState(false);
   const [Duration, SetDuration] = useState(false);
-  const CurrentIndex = useRef(0);
-  const [Value, SetValue] = useState(0);
 
   //Unsure why useRef and not just the new Audio.Sound - let's research! 
   const sound = useRef(new Audio.Sound());
@@ -330,8 +330,6 @@ export function LightningOnJupiter() {
   const [Loading, SetLoading] = useState(false);
   const [Playing, SetPlaying] = useState(false);
   const [Duration, SetDuration] = useState(false);
-  const CurrentIndex = useRef(0);
-  const [Value, SetValue] = useState(0);
 
   //Unsure why useRef and not just the new Audio.Sound - let's research! 
   const sound = useRef(new Audio.Sound());
@@ -461,8 +459,6 @@ export function EmfisisChorus() {
   const [Loading, SetLoading] = useState(false);
   const [Playing, SetPlaying] = useState(false);
   const [Duration, SetDuration] = useState(false);
-  const CurrentIndex = useRef(0);
-  const [Value, SetValue] = useState(0);
 
   //Unsure why useRef and not just the new Audio.Sound - let's research! 
   const sound = useRef(new Audio.Sound());
@@ -592,8 +588,6 @@ export function EnceladusHiss() {
   const [Loading, SetLoading] = useState(false);
   const [Playing, SetPlaying] = useState(false);
   const [Duration, SetDuration] = useState(false);
-  const CurrentIndex = useRef(0);
-  const [Value, SetValue] = useState(0);
 
   //Unsure why useRef and not just the new Audio.Sound - let's research! 
   const sound = useRef(new Audio.Sound());
@@ -723,8 +717,6 @@ export function InterstellarRadioWaves() {
   const [Loading, SetLoading] = useState(false);
   const [Playing, SetPlaying] = useState(false);
   const [Duration, SetDuration] = useState(false);
-  const CurrentIndex = useRef(0);
-  const [Value, SetValue] = useState(0);
 
   //Unsure why useRef and not just the new Audio.Sound - let's research! 
   const sound = useRef(new Audio.Sound());
@@ -854,8 +846,6 @@ export function WhistlerWaves() {
   const [Loading, SetLoading] = useState(false);
   const [Playing, SetPlaying] = useState(false);
   const [Duration, SetDuration] = useState(false);
-  const CurrentIndex = useRef(0);
-  const [Value, SetValue] = useState(0);
 
   //Unsure why useRef and not just the new Audio.Sound - let's research! 
   const sound = useRef(new Audio.Sound());
@@ -985,8 +975,6 @@ export function Stardust() {
   const [Loading, SetLoading] = useState(false);
   const [Playing, SetPlaying] = useState(false);
   const [Duration, SetDuration] = useState(false);
-  const CurrentIndex = useRef(0);
-  const [Value, SetValue] = useState(0);
 
   //Unsure why useRef and not just the new Audio.Sound - let's research! 
   const sound = useRef(new Audio.Sound());

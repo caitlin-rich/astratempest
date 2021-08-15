@@ -1,0 +1,11 @@
+OKAY 
+
+here's what we need to do sunday: 
+
+1. consider killing your darlings and getting rid of the home page buttons. (SEE IF YOU CAN MAKE THEM WORK FIRST THO.)
+2. if so, make a cool "where is the ISS" widget
+3. also consider moving soundscapes to home page
+4. figure out how to make soundscapes loop
+5. add more sounds? 
+
+6. Add descriptions to each page - what each event is etc. 

@@ -7,14 +7,12 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createDrawerNavigator, DrawerComponent } from '@react-navigation/drawer';
 
- import TestDrawer from "./Drawer";
- import SolarFlares from "./SolarFlares";
 //////////////////////////////////////////
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#ffbaba",
+    //backgroundColor: "#ffbaba",
     paddingBottom: 10,
   },
 });
@@ -22,8 +20,11 @@ const styles = StyleSheet.create({
 const Drawer = createDrawerNavigator();
 
 
+//Known Bug: clicking on the drawer navigation persists the navigation drawer, but clicking these links does not. 
 
-export default function Home({ navigation }) {
+
+
+export default function HomePage({ navigation }) {
   return (
     <ScrollView style={styles.container}>
       <Image
