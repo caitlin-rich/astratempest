@@ -20,9 +20,10 @@ Grace Shopper Stackathon Project
 The project was done as part of the Grace Hopper Stackathon. The goal was to have a completed project within about four and a half days. The prompt was to build something cool and learn something new. I chose to learn React Native, since I found a lot of success with React/Redux in the web browswer. Although there are heavy similarities between the two, I definitely found there was a learning curve with React Native - and I never expected to miss CSS so much! 
 
 # Things I Loved About This Project 
-*Learning how to build a mobile app! So cool!
+*Learning how to use React Native and build a mobile app! So cool!
 *I hadn't pulled information from an API before, and now I have access to so much new information.
 *Learning cool space facts. Not necessarily relevant to coding, but still neat. Did you know that it's raining sulfer on Venus almost 100% of the time? 
+*I learned the basics of React Hooks, which I can't wait to implement in future projects! I didn't use them everywhere, but in the future I will potentially refactor to do so. 
  
 
 # Future Features and Updates

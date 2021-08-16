@@ -7,64 +7,71 @@ import { Button, TouchableRipple } from "react-native-paper";
 
 //////////////////////////////////////////
 
-
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: "#E6E6FA",
-      width: "100%",
-      height: "10%",
-      margin: 10,
-    },
-  });
-  
-  class ISS extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        latitude: null,
-        longitude: null,
-        isLoading: true,
-        location: null
-      };
-    }
-  
-    componentDidMount() {
-      const ISS_API = `http://api.open-notify.org/iss-now.json`;
-      fetch(ISS_API)
-        .then(res => res.json())
-        .then(data => {
-          console.log("Raw Date for Reference", data); //included in final code deliberately
-          let latitude = data.iss_position.latitude
-          let longitude = data.iss_position.longitude
-          this.setState({latitude, longitude})
-        });
+  container: {
+    flex: 1,
+    backgroundColor: "#E6E6FA",
+    width: "100%",
+    height: "10%",
+    margin: 10,
+  },
+});
 
-        
-          let API_KEY = "2f4cef923734433286237b0d86511558"
-          let API_URL = `https://api.opencagedata.com/geocode/v1/json?q=${this.state.latitude}+${this.state.longitude}&key=${API_KEY}`
-          
-          fetch(API_URL) 
-          .then(res=>res.json())
-          .then(data => {
-              console.log("GEOCODING Raw Date for Reference", data, 'END OF RAW DATA'); //included in final code deliberately
-            this.setState({ location : data.results.map(info => info.formatted), isLoading: false })
-    
-    
-          })
-    }
-
-  
-    render() {
-      return (
-        <ScrollView style={styles.container}>
-          {this.state.isLoading 
-          ? <Text>Loading...</Text>
-          : <Text>Latitude: {this.state.latitude}, Longitude: {this.state.longitude} | The space station is over {this.state.location ? this.state.location : 'these coordinates'}! </Text>
-            }
-        </ScrollView>
-      );
-    }
+class ISS extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      latitude: null,
+      longitude: null,
+      isLoading: true,
+      location: null,
+    };
   }
-  
-  export default ISS;
+
+  componentDidMount() {
+    const ISS_API = `http://api.open-notify.org/iss-now.json`;
+    fetch(ISS_API)
+      .then(res => res.json())
+      .then(data => {
+        console.log("Raw Date for Reference", data); //included in final code deliberately
+        let latitude = data.iss_position.latitude;
+        let longitude = data.iss_position.longitude;
+        this.setState({ latitude, longitude });
+      });
+
+    let API_KEY = "2f4cef923734433286237b0d86511558";
+    let API_URL = `https://api.opencagedata.com/geocode/v1/json?q=${this.state.latitude}+${this.state.longitude}&key=${API_KEY}`;
+
+    fetch(API_URL)
+      .then(res => res.json())
+      .then(data => {
+        console.log(
+          "Raw Date for Reference", data); //included in final code deliberately
+        this.setState({
+          location: data.results.map(info => info.formatted),
+          isLoading: false,
+        });
+      });
+  }
+
+  render() {
+    return (
+      <ScrollView style={styles.container}>
+        {this.state.isLoading ? (
+          <Text>Loading...</Text>
+        ) : (
+          <View>
+            {/* <Text>
+              Latitude: {this.state.latitude}, Longitude: {this.state.longitude}
+            </Text> */}
+            <Text>
+              The International Space Station is over {this.state.location ? this.state.location : "these coordinates"}!
+            </Text>
+          </View>
+        )}
+      </ScrollView>
+    );
+  }
+}
+
+export default ISS;
