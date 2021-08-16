@@ -12,6 +12,7 @@ import {
 
 import ISS from "./ISS.js";
 import SoundDisplay from "./SoundDisplay";
+import Moon from "./Moon"
 
 //////////////////////////////////////////
 
@@ -51,6 +52,13 @@ export default function HomePage({ navigation }) {
           source={require("../images/betterimages/LISTEN_TO_SPACE.png")}
         />
       </TouchableRipple>
+
+      <Image
+        style={{ width: "100%", marginTop: 10,}}
+        source={require("../images/betterimages/the_moon.png")}
+      />
+
+    <Moon />
 
       <Image
         style={{ width: "100%", margin: 2,}}

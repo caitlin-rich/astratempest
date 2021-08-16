@@ -72,7 +72,7 @@ class ISS extends React.Component {
               The International Space Station is over{" "}
               {this.state.isLocationLoading
                 ? "these coordinates"
-                : this.state.location}
+                : this.state.location ? this.state.location : "this latitude and longitude"}
               !
             </Text>
           </View>
