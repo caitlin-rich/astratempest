@@ -40,9 +40,8 @@ The project was done as part of the Grace Hopper Stackathon. The goal was to hav
 
 ## Notes
 
-*I take full credit/blame for the terrible graphic design. It's not a graphic design bootcamp! :)  That may also be a future feature/update!  
 *AstraTempest very loosely translates to Space Weather, if you're willing to trust some Google Translate.  
-*All API information and sounds are sourced from NASA.  
+*All API information and sounds are sourced from NASA, excluding moon data which is from Visual Crossing
 
 
 
