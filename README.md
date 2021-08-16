@@ -9,7 +9,7 @@ Grace Shopper Stackathon Project
 
 ## Video Demo
 
-https://youtu.be/W3Lwv_c37l0
+https://youtu.be/qhxnnoOBCUw
 
 ## Tech Used
 
