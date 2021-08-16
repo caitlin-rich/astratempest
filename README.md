@@ -9,11 +9,11 @@ Grace Shopper Stackathon Project
 
 ## Tech Used
 
-*Javascript 
-*React Native 
-*React Native Paper 
-*Expo AV 
-*API Requests 
+*Javascript
+*React Native
+*React Native Paper
+*Expo AV
+*API Requests
 
 ## The Project
 
