@@ -23,6 +23,7 @@ class MoonPhase extends React.Component {
       moonPhase: [],
       isLoading: true,
     };
+    this.renderSwitch = this.renderSwitch.bind(this);
   }
 
   componentDidMount() {
@@ -38,6 +39,38 @@ class MoonPhase extends React.Component {
       });
   }
 
+  renderSwitch(phase) {
+      console.log('IN RENDERSWITCH', phase)
+
+      if (phase === 0)
+       { return <Image source={require("../images/moon_phases/new_moon.png")} />;}
+      if (phase < 0.25)
+        {return (
+          <Image source={require("../images/moon_phases/waxing_cresent.png")} />
+        );}
+      if (phase === 0.25)
+        {return (
+          <Image source={require("../images/moon_phases/first_quarter.png")} />
+        );}
+      if (phase < 0.5)
+       { return (
+          <Image source={require("../images/moon_phases/waxing_gibbous.png")} />
+        );}
+      if (phase === 0.5)
+        {return (
+          <Image source={require("../images/moon_phases/full_moon.png")} />
+        );}
+      if (phase < 0.75)
+       { return (
+          <Image source={require("../images/moon_phases/waning_gibbous.png")} />
+        );}
+      if (phase < 1.1)
+        {return (
+          <Image source={require("../images/moon_phases/waning_cresent.png")} />
+        );}
+      else {return <Text>Moon Phase Data Unavailable.</Text>}  
+    }
+  
   render() {
     return (
       <ScrollView style={styles.container} horizontal={true}>
@@ -46,44 +79,12 @@ class MoonPhase extends React.Component {
         ) : (
           this.state.moonPhase.map((day, idx) => {
             return (
-              <Card key={idx} style={{ marginTop: 10, width: 80, height: 80, marginRight: 5, }}>
+              <Card
+                key={idx}
+                style={{ marginTop: 10, width: 80, height: 80, marginRight: 5 }}
+              >
                 <Text>{day.datetime}:</Text>
-                {day.moon === 0 ? (
-                  <Image
-                    source={require("../images/moon_phases/new_moon.png")}
-                  />
-                ) : 0 < day.moon < 0.25 ? (
-                  <Image
-                    source={require("../images/moon_phases/waxing_cresent.png")}
-                  />
-                ) : day.moon === 0.25 ? (
-                  <Image
-                    source={require("../images/moon_phases/first_quarter.png")}
-                  />
-                ) : 0.25 < day.moon < 0.5 ? (
-                  <Image
-                    source={require("../images/moon_phases/waxing_gibbous.png")}
-                  />
-                ) : day.moon === 0.5 ? (
-                  <Image
-                    source={require("../images/moon_phases/full_moon.png")}
-                  />
-                ) : 0.5 < day.moon < 0.75 ? (
-                  <Image
-                    source={require("../images/moon_phases/waning_gibbous.png")}
-                  />
-
-                ) : day.moon === 0.75 ? (
-                  <Image
-                    source={require("../images/moon_phases/last_quarter.png")}
-                  />
-                ) : 0.75 < day.moon < 1.1 ? (
-                  <Image
-                    source={require("../images/moon_phases/waning_cresent.png")}
-                  />
-                ) : (
-                  <Text>Moon Phase Data Not Available</Text>
-                )}
+                {this.renderSwitch(day.moonphase)}
               </Card>
             );
           })
