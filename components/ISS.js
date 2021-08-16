@@ -25,6 +25,7 @@ class ISS extends React.Component {
       longitude: null,
       isLoading: true,
       location: null,
+      isLocationLoading: true,
     };
   }
 
@@ -33,39 +34,47 @@ class ISS extends React.Component {
     fetch(ISS_API)
       .then(res => res.json())
       .then(data => {
-        console.log("Raw Date for Reference", data); //included in final code deliberately
+        console.log("Raw Data for Reference", data); //included in final code deliberately
         let latitude = data.iss_position.latitude;
         let longitude = data.iss_position.longitude;
-        this.setState({ latitude, longitude });
-      });
-
-    let API_KEY = "2f4cef923734433286237b0d86511558";
-    let API_URL = `https://api.opencagedata.com/geocode/v1/json?q=${this.state.latitude}+${this.state.longitude}&key=${API_KEY}`;
-
-    fetch(API_URL)
-      .then(res => res.json())
-      .then(data => {
-        console.log(
-          "Raw Date for Reference", data); //included in final code deliberately
-        this.setState({
-          location: data.results.map(info => info.formatted),
-          isLoading: false,
-        });
-      });
+        this.setState({ latitude, longitude, });
+        if (this.state.isLocationLoading){
+          let API_KEY = "2f4cef923734433286237b0d86511558";
+          let API_URL = `https://api.opencagedata.com/geocode/v1/json?q=${data.iss_position.latitude}+${data.iss_position.longitude}&key=${API_KEY}`;
+      
+          fetch(API_URL)
+            .then(res => res.json())
+            .then(data => {
+              console.log("Raw Data for Reference", data); //included in final code deliberately
+              this.setState({
+                location: data.results.map(info => info.formatted),
+                isLoading: false,
+                isLocationLoading: false,
+              });
+            });
+          }
+      }); 
   }
 
+
+
   render() {
+    console.log("LATLONGTEST", this.state.latitude, this.state.longitude);
     return (
       <ScrollView style={styles.container}>
         {this.state.isLoading ? (
           <Text>Loading...</Text>
         ) : (
           <View>
-            {/* <Text>
-              Latitude: {this.state.latitude}, Longitude: {this.state.longitude}
-            </Text> */}
             <Text>
-              The International Space Station is over {this.state.location ? this.state.location : "these coordinates"}!
+              Latitude: {this.state.latitude}, Longitude: {this.state.longitude}
+            </Text>
+            <Text>
+              The International Space Station is over{" "}
+              {this.state.isLocationLoading
+                ? "these coordinates"
+                : this.state.location}
+              !
             </Text>
           </View>
         )}
