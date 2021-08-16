@@ -35,7 +35,7 @@ const theme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
-    primary: "#ffbaba",
+    primary: "#E6E6FA",
     accent: "#3a1919",
   },
 };
@@ -96,11 +96,11 @@ export default function App() {
               component={SEP}
               options={{ title: "Solar Energetic Particles" }}
             />
-            <Stack.Screen
+            {/* <Stack.Screen
               name="Asteroids"
               component={Asteroids}
               options={{ title: "Asteroids" }}
-            />
+            /> */}
          
           <Stack.Screen
               name="Soundscapes"

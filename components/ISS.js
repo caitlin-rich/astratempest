@@ -11,7 +11,7 @@ import { Button, TouchableRipple } from "react-native-paper";
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: "#ffe3e3",
+      backgroundColor: "#E6E6FA",
       width: "100%",
       height: "10%",
       margin: 10,
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
         latitude: null,
         longitude: null,
         isLoading: true,
-        mapQuestData: null,
+        location: null
       };
     }
   
@@ -37,16 +37,30 @@ const styles = StyleSheet.create({
           console.log("Raw Date for Reference", data); //included in final code deliberately
           let latitude = data.iss_position.latitude
           let longitude = data.iss_position.longitude
-          this.setState({latitude, longitude, isLoading: false})
+          this.setState({latitude, longitude})
         });
+
+        
+          let API_KEY = "2f4cef923734433286237b0d86511558"
+          let API_URL = `https://api.opencagedata.com/geocode/v1/json?q=${this.state.latitude}+${this.state.longitude}&key=${API_KEY}`
+          
+          fetch(API_URL) 
+          .then(res=>res.json())
+          .then(data => {
+              console.log("GEOCODING Raw Date for Reference", data, 'END OF RAW DATA'); //included in final code deliberately
+            this.setState({ location : data.results.map(info => info.formatted), isLoading: false })
+    
+    
+          })
     }
+
   
     render() {
       return (
         <ScrollView style={styles.container}>
           {this.state.isLoading 
           ? <Text>Loading...</Text>
-          : <Text>Latitude: {this.state.latitude}, Longitude: {this.state.longitude}</Text>
+          : <Text>Latitude: {this.state.latitude}, Longitude: {this.state.longitude} | The space station is over {this.state.location ? this.state.location : 'these coordinates'}! </Text>
             }
         </ScrollView>
       );

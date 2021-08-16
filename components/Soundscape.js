@@ -73,7 +73,7 @@ const Files = [
     name: 'Kepler Star II'
   },
   {
-    id: 10,
+    id: 11,
     file: require('../sounds/590320main_ringtone_apollo11_countdown.mp3'),
     name: 'Apollo 11 Liftoff Countdown'
   },
@@ -94,8 +94,7 @@ export function KeplerStar() {
   const [Loading, SetLoading] = useState(false);
   const [Playing, SetPlaying] = useState(false);
   const [Duration, SetDuration] = useState(false);
-
-  //Unsure why useRef and not just the new Audio.Sound - let's research! 
+ 
   const sound = useRef(new Audio.Sound());
 
   const LoadAudio = async (index) => {
@@ -113,12 +112,11 @@ export function KeplerStar() {
           true
         );
         if (result.isLoaded === false) {
-          //unsure why this is needed? Maybe for if it's the last track or something? I wonder if I won't need this since i'm using this for single track
+       
           SetLoading(false);
           SetLoaded(false);
         } else {
-          //Works with the UpdateStatus function that I don't think I need. 
-          //sound.current.setOnPlaybackStatusUpdate(UpdateStatus);
+
           SetLoading(false);
           SetLoaded(true);
           SetDuration(result.durationMillis);
@@ -223,8 +221,7 @@ export function SaturnRadioWaves() {
   const [Loading, SetLoading] = useState(false);
   const [Playing, SetPlaying] = useState(false);
   const [Duration, SetDuration] = useState(false);
-
-  //Unsure why useRef and not just the new Audio.Sound - let's research! 
+ 
   const sound = useRef(new Audio.Sound());
 
   const LoadAudio = async (index) => {
@@ -242,12 +239,11 @@ export function SaturnRadioWaves() {
           true
         );
         if (result.isLoaded === false) {
-          //unsure why this is needed? Maybe for if it's the last track or something? I wonder if I won't need this since i'm using this for single track
+       
           SetLoading(false);
           SetLoaded(false);
         } else {
-          //Works with the UpdateStatus function that I don't think I need. 
-          //sound.current.setOnPlaybackStatusUpdate(UpdateStatus);
+
           SetLoading(false);
           SetLoaded(true);
           SetDuration(result.durationMillis);
@@ -352,8 +348,7 @@ export function LightningOnJupiter() {
   const [Loading, SetLoading] = useState(false);
   const [Playing, SetPlaying] = useState(false);
   const [Duration, SetDuration] = useState(false);
-
-  //Unsure why useRef and not just the new Audio.Sound - let's research! 
+ 
   const sound = useRef(new Audio.Sound());
 
   const LoadAudio = async (index) => {
@@ -371,12 +366,11 @@ export function LightningOnJupiter() {
           true
         );
         if (result.isLoaded === false) {
-          //unsure why this is needed? Maybe for if it's the last track or something? I wonder if I won't need this since i'm using this for single track
+       
           SetLoading(false);
           SetLoaded(false);
         } else {
-          //Works with the UpdateStatus function that I don't think I need. 
-          //sound.current.setOnPlaybackStatusUpdate(UpdateStatus);
+
           SetLoading(false);
           SetLoaded(true);
           SetDuration(result.durationMillis);
@@ -481,8 +475,7 @@ export function EmfisisChorus() {
   const [Loading, SetLoading] = useState(false);
   const [Playing, SetPlaying] = useState(false);
   const [Duration, SetDuration] = useState(false);
-
-  //Unsure why useRef and not just the new Audio.Sound - let's research! 
+ 
   const sound = useRef(new Audio.Sound());
 
   const LoadAudio = async (index) => {
@@ -500,12 +493,11 @@ export function EmfisisChorus() {
           true
         );
         if (result.isLoaded === false) {
-          //unsure why this is needed? Maybe for if it's the last track or something? I wonder if I won't need this since i'm using this for single track
+       
           SetLoading(false);
           SetLoaded(false);
         } else {
-          //Works with the UpdateStatus function that I don't think I need. 
-          //sound.current.setOnPlaybackStatusUpdate(UpdateStatus);
+
           SetLoading(false);
           SetLoaded(true);
           SetDuration(result.durationMillis);
@@ -610,8 +602,7 @@ export function EnceladusHiss() {
   const [Loading, SetLoading] = useState(false);
   const [Playing, SetPlaying] = useState(false);
   const [Duration, SetDuration] = useState(false);
-
-  //Unsure why useRef and not just the new Audio.Sound - let's research! 
+ 
   const sound = useRef(new Audio.Sound());
 
   const LoadAudio = async (index) => {
@@ -629,12 +620,11 @@ export function EnceladusHiss() {
           true
         );
         if (result.isLoaded === false) {
-          //unsure why this is needed? Maybe for if it's the last track or something? I wonder if I won't need this since i'm using this for single track
+       
           SetLoading(false);
           SetLoaded(false);
         } else {
-          //Works with the UpdateStatus function that I don't think I need. 
-          //sound.current.setOnPlaybackStatusUpdate(UpdateStatus);
+
           SetLoading(false);
           SetLoaded(true);
           SetDuration(result.durationMillis);
@@ -739,8 +729,7 @@ export function InterstellarRadioWaves() {
   const [Loading, SetLoading] = useState(false);
   const [Playing, SetPlaying] = useState(false);
   const [Duration, SetDuration] = useState(false);
-
-  //Unsure why useRef and not just the new Audio.Sound - let's research! 
+ 
   const sound = useRef(new Audio.Sound());
 
   const LoadAudio = async (index) => {
@@ -758,12 +747,11 @@ export function InterstellarRadioWaves() {
           true
         );
         if (result.isLoaded === false) {
-          //unsure why this is needed? Maybe for if it's the last track or something? I wonder if I won't need this since i'm using this for single track
+       
           SetLoading(false);
           SetLoaded(false);
         } else {
-          //Works with the UpdateStatus function that I don't think I need. 
-          //sound.current.setOnPlaybackStatusUpdate(UpdateStatus);
+
           SetLoading(false);
           SetLoaded(true);
           SetDuration(result.durationMillis);
@@ -868,8 +856,7 @@ export function WhistlerWaves() {
   const [Loading, SetLoading] = useState(false);
   const [Playing, SetPlaying] = useState(false);
   const [Duration, SetDuration] = useState(false);
-
-  //Unsure why useRef and not just the new Audio.Sound - let's research! 
+ 
   const sound = useRef(new Audio.Sound());
 
   const LoadAudio = async (index) => {
@@ -887,12 +874,11 @@ export function WhistlerWaves() {
           true
         );
         if (result.isLoaded === false) {
-          //unsure why this is needed? Maybe for if it's the last track or something? I wonder if I won't need this since i'm using this for single track
+       
           SetLoading(false);
           SetLoaded(false);
         } else {
-          //Works with the UpdateStatus function that I don't think I need. 
-          //sound.current.setOnPlaybackStatusUpdate(UpdateStatus);
+
           SetLoading(false);
           SetLoaded(true);
           SetDuration(result.durationMillis);
@@ -997,8 +983,7 @@ export function Stardust() {
   const [Loading, SetLoading] = useState(false);
   const [Playing, SetPlaying] = useState(false);
   const [Duration, SetDuration] = useState(false);
-
-  //Unsure why useRef and not just the new Audio.Sound - let's research! 
+ 
   const sound = useRef(new Audio.Sound());
 
   const LoadAudio = async (index) => {
@@ -1016,12 +1001,11 @@ export function Stardust() {
           true
         );
         if (result.isLoaded === false) {
-          //unsure why this is needed? Maybe for if it's the last track or something? I wonder if I won't need this since i'm using this for single track
+       
           SetLoading(false);
           SetLoaded(false);
         } else {
-          //Works with the UpdateStatus function that I don't think I need. 
-          //sound.current.setOnPlaybackStatusUpdate(UpdateStatus);
+
           SetLoading(false);
           SetLoaded(true);
           SetDuration(result.durationMillis);
@@ -1129,8 +1113,7 @@ export function Gaynemede() {
   const [Duration, SetDuration] = useState(false);
 
 
-
-  //Unsure why useRef and not just the new Audio.Sound - let's research! 
+ 
   const sound = useRef(new Audio.Sound());
 
   const LoadAudio = async (index) => {
@@ -1148,12 +1131,11 @@ export function Gaynemede() {
           true
         );
         if (result.isLoaded === false) {
-          //unsure why this is needed? Maybe for if it's the last track or something? I wonder if I won't need this since i'm using this for single track
+       
           SetLoading(false);
           SetLoaded(false);
         } else {
-          //Works with the UpdateStatus function that I don't think I need. 
-          //sound.current.setOnPlaybackStatusUpdate(UpdateStatus);
+
           SetLoading(false);
           SetLoaded(true);
           SetDuration(result.durationMillis);
@@ -1262,8 +1244,7 @@ export function Kepler2() {
   const [Duration, SetDuration] = useState(false);
 
 
-
-  //Unsure why useRef and not just the new Audio.Sound - let's research! 
+ 
   const sound = useRef(new Audio.Sound());
 
   const LoadAudio = async (index) => {
@@ -1281,12 +1262,11 @@ export function Kepler2() {
           true
         );
         if (result.isLoaded === false) {
-          //unsure why this is needed? Maybe for if it's the last track or something? I wonder if I won't need this since i'm using this for single track
+       
           SetLoading(false);
           SetLoaded(false);
         } else {
-          //Works with the UpdateStatus function that I don't think I need. 
-          //sound.current.setOnPlaybackStatusUpdate(UpdateStatus);
+
           SetLoading(false);
           SetLoaded(true);
           SetDuration(result.durationMillis);
@@ -1386,7 +1366,7 @@ export function Kepler2() {
 
 
 //idx 10
-export function Kepler2() {
+export function ApolloLiftoff() {
 
   const [Loaded, SetLoaded] = useState(false);
   const [Loading, SetLoading] = useState(false);
@@ -1394,8 +1374,7 @@ export function Kepler2() {
   const [Duration, SetDuration] = useState(false);
 
 
-
-  //Unsure why useRef and not just the new Audio.Sound - let's research! 
+ 
   const sound = useRef(new Audio.Sound());
 
   const LoadAudio = async (index) => {
@@ -1413,12 +1392,11 @@ export function Kepler2() {
           true
         );
         if (result.isLoaded === false) {
-          //unsure why this is needed? Maybe for if it's the last track or something? I wonder if I won't need this since i'm using this for single track
+       
           SetLoading(false);
           SetLoaded(false);
         } else {
-          //Works with the UpdateStatus function that I don't think I need. 
-          //sound.current.setOnPlaybackStatusUpdate(UpdateStatus);
+
           SetLoading(false);
           SetLoaded(true);
           SetDuration(result.durationMillis);

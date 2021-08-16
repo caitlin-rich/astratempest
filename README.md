@@ -26,7 +26,7 @@ The project was done as part of the Grace Hopper Stackathon. The goal was to hav
  
 
 # Future Features and Updates
-*I'd like to put the soundscape controls in a drawer. I wasn't able to figure out how to implement that this time around.
+*I'd like to put the soundscape controls in a drawer. I wasn't able to figure out how to implement that this time around. You also cannot go back and pause tracks once you leave the page - I'd love to figure out how to make that persist. 
 *The ISS widget should use reverse geolocation to show which city the ISS is flying over. 
 *There's a small bug with the navigation; I'd like to get a better grasp on React Native Navigation and it's many, many nuances. 
 *The Soundscapes code is the least DRY code ever written! I opted to get functionality and then refactor afterwards, since getting the audio player to work had been a frustrating journey, but then I ran out of time to refactor. But...at least it works! 

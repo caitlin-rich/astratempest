@@ -40,8 +40,8 @@ export default function DrawerNav() {
       <Drawer.Screen name="Geomagnetic Storms" component={GeoStorms} />
       <Drawer.Screen name="Coronal Mass Ejections" component={CME} />
       <Drawer.Screen name="Interplanetary Shock" component={InterplanetaryShock} />
-      <Drawer.Screen name="Solar Energetic Particles" component={SEP} />
       <Drawer.Screen name="Asteroids" component={Asteroids} />
+      <Drawer.Screen name="Solar Energetic Particles" component={SEP} />
     </Drawer.Navigator>
   );
 }

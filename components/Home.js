@@ -18,7 +18,7 @@ import SoundDisplay from "./SoundDisplay";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#ffbaba",
+    backgroundColor: "#E6E6FA",
     paddingBottom: 10,
   },
 });
@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
 const Drawer = createDrawerNavigator();
 
 //Known Bug: clicking on the drawer navigation persists the navigation drawer, but clicking these links does not.
+//update EXCEPT WITH THE ASTEROIDS PAGE for some weird reason? what the heck it is the same as everyone else's??? 
 
 export default function HomePage({ navigation }) {
   return (
@@ -37,7 +38,7 @@ export default function HomePage({ navigation }) {
 
       <Image
         style={{ width: "100%", margin: 2 }}
-        source={require("../images/rpw_where_is_iss_resized.png")}
+        source={require("../images/betterimages/where_is_iss.png")}
       />
 
       <ISS />
@@ -47,13 +48,13 @@ export default function HomePage({ navigation }) {
       >
         <Image
           style={{ width: "100%", margin: 2, }}
-          source={require("../images/rpw_space_soundscape_header.png")}
+          source={require("../images/betterimages/LISTEN_TO_SPACE.png")}
         />
       </TouchableRipple>
 
       <Image
         style={{ width: "100%", margin: 2,}}
-        source={require("../images/rpw_space_weather_header.png")}
+        source={require("../images/betterimages/space_Weather.png")}
       />
 
       {/* Touchable Ripples are used here as custom buttons. Currently, they don't actually ripple. :( */}
@@ -63,7 +64,7 @@ export default function HomePage({ navigation }) {
       >
         <Image
           style={{ width: "100%", margin: 2 }}
-          source={require("../images/rpw_geomagnetic_storms_resized.png")}
+          source={require("../images/betterimages/GEOMAGNETIC_STORMS.png")}
         />
       </TouchableRipple>
 
@@ -73,7 +74,7 @@ export default function HomePage({ navigation }) {
       >
         <Image
           style={{ width: "100%", margin: 2 }}
-          source={require("../images/rpw_solar_energetic_particles_resized.png")}
+          source={require("../images/betterimages/solar_energetic_particles.png")}
         />
       </TouchableRipple>
 
@@ -83,7 +84,7 @@ export default function HomePage({ navigation }) {
       >
         <Image
           style={{ width: "100%", margin: 2 }}
-          source={require("../images/rpw_coronal_mass_ejections_resized.png")}
+          source={require("../images/betterimages/coronal_mass_ejections.png")}
         />
       </TouchableRipple>
 
@@ -93,7 +94,7 @@ export default function HomePage({ navigation }) {
       >
         <Image
           style={{ width: "100%", margin: 2 }}
-          source={require("../images/rpw_solar_flares_resized.png")}
+          source={require("../images/betterimages/solar_flares.png")}
         />
       </TouchableRipple>
 
@@ -103,7 +104,7 @@ export default function HomePage({ navigation }) {
       >
         <Image
           style={{ width: "100%", margin: 2 }}
-          source={require("../images/rpw_interplanetary_shock_resized.png")}
+          source={require("../images/betterimages/INTERPLANETARY_SHOCK.png")}
         />
       </TouchableRipple>
 
@@ -113,7 +114,7 @@ export default function HomePage({ navigation }) {
       >
         <Image
           style={{ width: "100%", margin: 2 }}
-          source={require("../images/rpw_asteroids_resized.png")}
+          source={require("../images/betterimages/ASTEROIDS.png")}
         />
       </TouchableRipple>
     </ScrollView>

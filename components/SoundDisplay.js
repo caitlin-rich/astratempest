@@ -26,6 +26,7 @@ import {
   WhistlerWaves,
   Gaynemede,
   Kepler2,
+  ApolloLiftoff
 } from "./Soundscape";
 
 export default function SoundDisplay() {
@@ -76,10 +77,14 @@ export default function SoundDisplay() {
           <Gaynemede />
         </Card.Content>
       </Card>
-
       <Card>
         <Card.Content>
           <Kepler2 />
+        </Card.Content>
+      </Card>
+      <Card>
+        <Card.Content>
+          <ApolloLiftoff />
         </Card.Content>
       </Card>
     </ScrollView>
