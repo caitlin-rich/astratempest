@@ -59,7 +59,6 @@ class ISS extends React.Component {
 
 
   render() {
-    console.log("LATLONGTEST", this.state.latitude, this.state.longitude);
     return (
       <ScrollView style={styles.container}>
         {this.state.isLoading ? (
