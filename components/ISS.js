@@ -44,10 +44,9 @@ const styles = StyleSheet.create({
     render() {
       return (
         <ScrollView style={styles.container}>
-          <Text>Where is the ISS?</Text>
           {this.state.isLoading 
           ? <Text>Loading...</Text>
-          : <Text>{this.state.latitude}, {this.state.longitude}</Text>
+          : <Text>Latitude: {this.state.latitude}, Longitude: {this.state.longitude}</Text>
             }
         </ScrollView>
       );

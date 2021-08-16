@@ -1,3 +1,5 @@
+//STASHING MY FUNCTION SOUNDSCAPE CODE like i suppose this is what git is for but that's ok
+
 import React, { useState, useRef, useEffect } from 'react';
 import {
   Text,
@@ -38,11 +40,11 @@ const Files = [
   {
     id: 4,
     file: require('../sounds/693857main_emfisis_chorus_1.mp3'),
-    name:  'Emfisis Chorus'
+    name:  'Radio Waves in Earth\'s Atmosphere'
   },
   {
     id: 5,
-    file: require('../sounds/Enceladus Hiss audio 256 kbps.mp3'),
+    file: require('../sounds/enceladus_hiss.mp3'),
     name: 'Enceladus Hiss'
   },
   {
@@ -60,7 +62,29 @@ const Files = [
     file: require('../sounds/598980main_stardust_tempel1.mp3'),
     name: 'Stardust'
   },
+  {
+    id: 9,
+    file: require('../sounds/ganymede.mp3'),
+    name: 'Gaynemede - Jupiter\'s Largest Moon'
+  },
+  {
+    id: 10,
+    file: require('../sounds/578359main_kepler_star_KIC7671081B.mp3'),
+    name: 'Kepler Star II'
+  },
+  {
+    id: 10,
+    file: require('../sounds/590320main_ringtone_apollo11_countdown.mp3'),
+    name: 'Apollo 11 Liftoff Countdown'
+  },
 ];
+
+
+
+//apollo 11 liftoff audio
+
+
+
 
 
 //idx 0
@@ -1094,6 +1118,404 @@ export function Stardust() {
     </View>
   );
 }
+
+
+//idx 8
+export function Gaynemede() {
+
+  const [Loaded, SetLoaded] = useState(false);
+  const [Loading, SetLoading] = useState(false);
+  const [Playing, SetPlaying] = useState(false);
+  const [Duration, SetDuration] = useState(false);
+
+
+
+  //Unsure why useRef and not just the new Audio.Sound - let's research! 
+  const sound = useRef(new Audio.Sound());
+
+  const LoadAudio = async (index) => {
+    //Load Audio starts by setting Loading to true! Makes sense! 
+    SetLoading(true);
+    //Gets status of the current sound (as created on line 33)
+    const checkLoading = await sound.current.getStatusAsync();
+    //if sound is not loaded, load sound with file from the Files array. Can maybe hardcode this for each track subcomponent. 
+    if (checkLoading.isLoaded === false) {
+      try {
+        //result stores the sound once the song is loaded
+        const result = await sound.current.loadAsync(
+          Files[index].file,
+          {isLooping: true},
+          true
+        );
+        if (result.isLoaded === false) {
+          //unsure why this is needed? Maybe for if it's the last track or something? I wonder if I won't need this since i'm using this for single track
+          SetLoading(false);
+          SetLoaded(false);
+        } else {
+          //Works with the UpdateStatus function that I don't think I need. 
+          //sound.current.setOnPlaybackStatusUpdate(UpdateStatus);
+          SetLoading(false);
+          SetLoaded(true);
+          SetDuration(result.durationMillis);
+          PlayAudio();
+        }
+      } catch (error) {
+        SetLoading(false);
+        SetLoaded(false);
+      }
+    } else {
+      //hits this once the song is loaded and sets Loading to false and Loaded to true. 
+      SetLoading(false);
+      SetLoaded(true);
+    }
+    //Song is now loaded! 
+  };
+
+  const PlayAudio = async () => {
+    try {
+      const result = await sound.current.getStatusAsync();
+      if (result.isLoaded) {
+        //If song is loaded, we can set Playing to true. 
+        if (result.isPlaying === false) {
+          sound.current.playAsync();
+          SetPlaying(true);
+        }
+      }
+    } catch (error) {
+      SetPlaying(false);
+    }
+  };
+
+  const PauseAudio = async () => {
+    try {
+      const result = await sound.current.getStatusAsync();
+      if (result.isLoaded) {
+        if (result.isPlaying === true) {
+          //pauses the song if it's both loaded and playing
+          sound.current.pauseAsync();
+          SetPlaying(false);
+        }
+      }
+    } catch (error) {
+      SetPlaying(true);
+    }
+  };
+
+
+  return (
+    <View style={styles.container}>
+      <Text style={{ marginBottom: 20 }}>
+         {Loading
+          ? 'Loading Audio Please Wait...'
+          : Playing === false
+          ? `${Files[8].name}`
+          : `Playing ${Files[8].name}`}
+      </Text>
+
+      <View
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'space-evenly',
+          width: '100%',
+          alignItems: 'center',
+        }}>
+
+
+        {Loading ? (
+          <ActivityIndicator size={'large'} color={'dodgerblue'} />
+        ) : Loaded === false ? (
+          <Ionicons
+            name="md-reload-sharp"
+            size={30}
+            color="black"
+            onPress={() => LoadAudio(8)}
+          />
+        ) : Playing ? (
+          <Entypo
+            name="controller-paus"
+            size={40}
+            color="black"
+            onPress={() => PauseAudio()}
+          />
+        ) : (
+          <Entypo
+            name="controller-play"
+            size={40}
+            color="black"
+            onPress={() => PlayAudio()}
+          />
+        )}
+
+      </View>
+    </View>
+  );
+}
+
+
+
+//idx 9
+export function Kepler2() {
+
+  const [Loaded, SetLoaded] = useState(false);
+  const [Loading, SetLoading] = useState(false);
+  const [Playing, SetPlaying] = useState(false);
+  const [Duration, SetDuration] = useState(false);
+
+
+
+  //Unsure why useRef and not just the new Audio.Sound - let's research! 
+  const sound = useRef(new Audio.Sound());
+
+  const LoadAudio = async (index) => {
+    //Load Audio starts by setting Loading to true! Makes sense! 
+    SetLoading(true);
+    //Gets status of the current sound (as created on line 33)
+    const checkLoading = await sound.current.getStatusAsync();
+    //if sound is not loaded, load sound with file from the Files array. Can maybe hardcode this for each track subcomponent. 
+    if (checkLoading.isLoaded === false) {
+      try {
+        //result stores the sound once the song is loaded
+        const result = await sound.current.loadAsync(
+          Files[index].file,
+          {isLooping: true},
+          true
+        );
+        if (result.isLoaded === false) {
+          //unsure why this is needed? Maybe for if it's the last track or something? I wonder if I won't need this since i'm using this for single track
+          SetLoading(false);
+          SetLoaded(false);
+        } else {
+          //Works with the UpdateStatus function that I don't think I need. 
+          //sound.current.setOnPlaybackStatusUpdate(UpdateStatus);
+          SetLoading(false);
+          SetLoaded(true);
+          SetDuration(result.durationMillis);
+          PlayAudio();
+        }
+      } catch (error) {
+        SetLoading(false);
+        SetLoaded(false);
+      }
+    } else {
+      //hits this once the song is loaded and sets Loading to false and Loaded to true. 
+      SetLoading(false);
+      SetLoaded(true);
+    }
+    //Song is now loaded! 
+  };
+
+  const PlayAudio = async () => {
+    try {
+      const result = await sound.current.getStatusAsync();
+      if (result.isLoaded) {
+        //If song is loaded, we can set Playing to true. 
+        if (result.isPlaying === false) {
+          sound.current.playAsync();
+          SetPlaying(true);
+        }
+      }
+    } catch (error) {
+      SetPlaying(false);
+    }
+  };
+
+  const PauseAudio = async () => {
+    try {
+      const result = await sound.current.getStatusAsync();
+      if (result.isLoaded) {
+        if (result.isPlaying === true) {
+          //pauses the song if it's both loaded and playing
+          sound.current.pauseAsync();
+          SetPlaying(false);
+        }
+      }
+    } catch (error) {
+      SetPlaying(true);
+    }
+  };
+
+
+  return (
+    <View style={styles.container}>
+      <Text style={{ marginBottom: 20 }}>
+         {Loading
+          ? 'Loading Audio Please Wait...'
+          : Playing === false
+          ? `${Files[9].name}`
+          : `Playing ${Files[9].name}`}
+      </Text>
+
+      <View
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'space-evenly',
+          width: '100%',
+          alignItems: 'center',
+        }}>
+
+
+        {Loading ? (
+          <ActivityIndicator size={'large'} color={'dodgerblue'} />
+        ) : Loaded === false ? (
+          <Ionicons
+            name="md-reload-sharp"
+            size={30}
+            color="black"
+            onPress={() => LoadAudio(9)}
+          />
+        ) : Playing ? (
+          <Entypo
+            name="controller-paus"
+            size={40}
+            color="black"
+            onPress={() => PauseAudio()}
+          />
+        ) : (
+          <Entypo
+            name="controller-play"
+            size={40}
+            color="black"
+            onPress={() => PlayAudio()}
+          />
+        )}
+
+      </View>
+    </View>
+  );
+}
+
+
+//idx 10
+export function Kepler2() {
+
+  const [Loaded, SetLoaded] = useState(false);
+  const [Loading, SetLoading] = useState(false);
+  const [Playing, SetPlaying] = useState(false);
+  const [Duration, SetDuration] = useState(false);
+
+
+
+  //Unsure why useRef and not just the new Audio.Sound - let's research! 
+  const sound = useRef(new Audio.Sound());
+
+  const LoadAudio = async (index) => {
+    //Load Audio starts by setting Loading to true! Makes sense! 
+    SetLoading(true);
+    //Gets status of the current sound (as created on line 33)
+    const checkLoading = await sound.current.getStatusAsync();
+    //if sound is not loaded, load sound with file from the Files array. Can maybe hardcode this for each track subcomponent. 
+    if (checkLoading.isLoaded === false) {
+      try {
+        //result stores the sound once the song is loaded
+        const result = await sound.current.loadAsync(
+          Files[index].file,
+          {isLooping: true},
+          true
+        );
+        if (result.isLoaded === false) {
+          //unsure why this is needed? Maybe for if it's the last track or something? I wonder if I won't need this since i'm using this for single track
+          SetLoading(false);
+          SetLoaded(false);
+        } else {
+          //Works with the UpdateStatus function that I don't think I need. 
+          //sound.current.setOnPlaybackStatusUpdate(UpdateStatus);
+          SetLoading(false);
+          SetLoaded(true);
+          SetDuration(result.durationMillis);
+          PlayAudio();
+        }
+      } catch (error) {
+        SetLoading(false);
+        SetLoaded(false);
+      }
+    } else {
+      //hits this once the song is loaded and sets Loading to false and Loaded to true. 
+      SetLoading(false);
+      SetLoaded(true);
+    }
+    //Song is now loaded! 
+  };
+
+  const PlayAudio = async () => {
+    try {
+      const result = await sound.current.getStatusAsync();
+      if (result.isLoaded) {
+        //If song is loaded, we can set Playing to true. 
+        if (result.isPlaying === false) {
+          sound.current.playAsync();
+          SetPlaying(true);
+        }
+      }
+    } catch (error) {
+      SetPlaying(false);
+    }
+  };
+
+  const PauseAudio = async () => {
+    try {
+      const result = await sound.current.getStatusAsync();
+      if (result.isLoaded) {
+        if (result.isPlaying === true) {
+          //pauses the song if it's both loaded and playing
+          sound.current.pauseAsync();
+          SetPlaying(false);
+        }
+      }
+    } catch (error) {
+      SetPlaying(true);
+    }
+  };
+
+
+  return (
+    <View style={styles.container}>
+      <Text style={{ marginBottom: 20 }}>
+         {Loading
+          ? 'Loading Audio Please Wait...'
+          : Playing === false
+          ? `${Files[10].name}`
+          : `Playing ${Files[10].name}`}
+      </Text>
+
+      <View
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'space-evenly',
+          width: '100%',
+          alignItems: 'center',
+        }}>
+
+
+        {Loading ? (
+          <ActivityIndicator size={'large'} color={'dodgerblue'} />
+        ) : Loaded === false ? (
+          <Ionicons
+            name="md-reload-sharp"
+            size={30}
+            color="black"
+            onPress={() => LoadAudio(10)}
+          />
+        ) : Playing ? (
+          <Entypo
+            name="controller-paus"
+            size={40}
+            color="black"
+            onPress={() => PauseAudio()}
+          />
+        ) : (
+          <Entypo
+            name="controller-play"
+            size={40}
+            color="black"
+            onPress={() => PlayAudio()}
+          />
+        )}
+
+      </View>
+    </View>
+  );
+}
+
 
 
 const styles = StyleSheet.create({

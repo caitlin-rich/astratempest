@@ -101,6 +101,12 @@ export default function App() {
               component={Asteroids}
               options={{ title: "Asteroids" }}
             />
+         
+          <Stack.Screen
+              name="Soundscapes"
+              component={SoundDisplay}
+              options={{ title: "Soundscapes" }}
+            />
           </Stack.Navigator>
 
           <StatusBar style="auto" />

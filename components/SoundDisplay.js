@@ -10,6 +10,7 @@ import {
   View,
   Button,
   Text,
+  Image
 } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { StyleSheet, ScrollView } from "react-native";
@@ -23,6 +24,8 @@ import {
   EnceladusHiss,
   InterstellarRadioWaves,
   WhistlerWaves,
+  Gaynemede,
+  Kepler2,
 } from "./Soundscape";
 
 export default function SoundDisplay() {
@@ -66,6 +69,17 @@ export default function SoundDisplay() {
       <Card>
         <Card.Content>
           <Stardust />
+        </Card.Content>
+      </Card>
+      <Card>
+        <Card.Content>
+          <Gaynemede />
+        </Card.Content>
+      </Card>
+
+      <Card>
+        <Card.Content>
+          <Kepler2 />
         </Card.Content>
       </Card>
     </ScrollView>

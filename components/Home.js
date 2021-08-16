@@ -18,7 +18,7 @@ import SoundDisplay from "./SoundDisplay";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    //backgroundColor: "#ffbaba",
+    backgroundColor: "#ffbaba",
     paddingBottom: 10,
   },
 });
@@ -39,7 +39,22 @@ export default function HomePage({ navigation }) {
         style={{ width: "100%", margin: 2 }}
         source={require("../images/rpw_where_is_iss_resized.png")}
       />
+
       <ISS />
+      <TouchableRipple
+        onPress={() => navigation.navigate("Soundscapes")}
+        rippleColor="rgba(0, 0, 0, .32)"
+      >
+        <Image
+          style={{ width: "100%", margin: 2, }}
+          source={require("../images/rpw_space_soundscape_header.png")}
+        />
+      </TouchableRipple>
+
+      <Image
+        style={{ width: "100%", margin: 2,}}
+        source={require("../images/rpw_space_weather_header.png")}
+      />
 
       {/* Touchable Ripples are used here as custom buttons. Currently, they don't actually ripple. :( */}
       <TouchableRipple
