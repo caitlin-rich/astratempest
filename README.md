@@ -7,6 +7,10 @@ Grace Shopper Stackathon Project
 
 *Caitlin Rich 
 
+## Video Demo
+
+https://youtu.be/W3Lwv_c37l0
+
 ## Tech Used
 
 *Javascript  
