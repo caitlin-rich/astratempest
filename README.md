@@ -21,7 +21,7 @@ https://youtu.be/hxi2sMdMUtg
 
 ## The Project
 
-The project was done as part of the Grace Hopper Stackathon. The goal was to have a completed project within about four and a half days. The prompt was to build something cool and learn something new. I chose to learn React Native, since I found a lot of success with React/Redux in the web browswer. Although there are heavy similarities between the two, I definitely found there was a learning curve with React Native - and I never expected to miss CSS so much! 
+The project was done as part of the Grace Hopper Stackathon. The goal was to have a completed project within about four and a half days. The prompt was to build something cool and learn something new. I chose to learn React Native, since I found a lot of success with React/Redux in the web browswer. Although there are heavy similarities between the two, I definitely found there was a learning curve with React Native! 
 
 # Things I Loved About This Project 
 *Learning how to use React Native and build a mobile app! So cool!  
